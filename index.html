@@ -712,7 +712,7 @@
         const SVG_NS = "http://www.w3.org/2000/svg";
         const pathlength = shape.getTotalLength();
 
-        let t = 0; // at the begining of the path
+        let t = 0; // at the beginning of the path
         let lengthAtT = pathlength * t;
 
         let d = shape.getAttribute("d");
@@ -943,10 +943,37 @@
                                  c-16.072-12.613-41.381-26.674-72.329-23.977c-21.664,2.405-52.653,12.308-77.277,45.856c-13.392,19.922-16.495,52.272,4.132,72.986
                                  c3.371,3.385,7.075,6.243,11.008,8.573c4.885,2.894,10.125,4.964,15.515,6.228C354.624,212.802,357.947,181.899,370.903,162.627z" />
         </svg>
-        <p id="text-click" style=" display: none;   font-family: fantasy;
-        color: indianred;
-        font-size: 50px;
-        top: 80%;">Click me now !</p>
+        <p id="text-click" style="display: none; 
+            font-family: 'Dancing Script', cursive;
+            color: #e8b2ca;
+            font-size: 32px;
+            font-weight: bold;
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-shadow: 2px 2px 8px rgba(255, 182, 193, 0.4), 1px 1px 3px rgba(255, 255, 255, 0.6);
+            animation: gentle-pulse 2s ease-in-out infinite;
+            background: linear-gradient(45deg, #e91e63, #c2185b, #ad1457);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(1px 1px 3px rgba(255, 182, 193, 0.3));">
+            ✨ Chạm nhẹ vào tớ nhé! ✨
+        </p>
+
+        <style>
+        @keyframes gentle-pulse {
+            0%, 100% {
+                opacity: 0.8;
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1.05);
+            }
+        }
+        </style>
     </div>
 
     <!-- <div class="box-content">
@@ -1110,7 +1137,7 @@
         let indexText = 0;
         let textLetter = document.querySelector('.textLetter h2');
         const textLetterH2 = "Nguyễn Ngọc Thảo My!";
-        let timoutTextLetter;
+        let timeoutTextLetter;
 
         function textCharLetter() {
             if (indexText < textLetterH2.length) {
@@ -1119,7 +1146,7 @@
                 setTimeout(indexText, 100);
             }
             else {
-                clearInterval(timoutTextLetter);
+                clearInterval(timeoutTextLetter);
                 setTimeout(() => {
                     funcTimeoutLetterContent()
                 }, 500)
@@ -1128,8 +1155,8 @@
         function funcTimeoutLetter() {
             indexText = 0; // Reset indexText
             textLetter.textContent = ''; // Xóa nội dung hiện tại của textLetter
-            clearInterval(timoutTextLetter);
-            timoutTextLetter = setInterval(() => {
+            clearInterval(timeoutTextLetter);
+            timeoutTextLetter = setInterval(() => {
                 textCharLetter();
             }, 200)
         }
@@ -1138,7 +1165,7 @@
         let indexTextContent = 0;
         let textLetterContent = document.querySelector('.contentLetter');
         const textLetterP = "Nhân ngày 20/10, chúc bạn luôn xinh đẹp, rạng rỡ và tràn ngập hạnh phúc. Mong những điều tốt đẹp nhất sẽ luôn đến với bạn. Hãy mỉm cười thật nhiều và để mọi muộn phiền ở lại phía sau nhé 💕";
-        let timoutTextLetterContent;
+        let timeoutTextLetterContent;
         function textCharLetterContent() {
             if (indexTextContent < textLetterP.length) {
                 textLetterContent.textContent += textLetterP[indexTextContent];
@@ -1146,15 +1173,15 @@
                 setTimeout(indexTextContent, 1);
             }
             else {
-                clearInterval(timoutTextLetterContent)
+                clearInterval(timeoutTextLetterContent)
 
             }
         }
         function funcTimeoutLetterContent() {
             indexTextContent = 0; // Reset indexTextContent
             textLetterContent.textContent = ''; // Xóa nội dung hiện tại của textLetter
-            clearInterval(timoutTextLetterContent);
-            timoutTextLetterContent = setInterval(() => {
+            clearInterval(timeoutTextLetterContent);
+            timeoutTextLetterContent = setInterval(() => {
                 textCharLetterContent();
             }, 100)
         }
